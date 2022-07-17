@@ -1,7 +1,19 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, AbstractUser
+from django.contrib.auth import get_user_model
+from django.urls import reverse
 from PIL import Image
 # Create your models here.
+
+
+
+class User(AbstractUser):
+    is_admin = models.BooleanField(default=False)
+    is_student = models.BooleanField(default=False)
+    is_staff = models.BooleanField(default=False)
+    
+    class Meta:
+        swappable = 'AUTH_USER_MODEL'
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -21,8 +33,3 @@ class Profile(models.Model):
             img.thumbnail(output_size)
             img.save(self.image.path)
 
-class Staff(models.Model):
-    name = models.OneToOneField(User, on_delete=models.CASCADE)
-
-class Student(models.Model):
-    name = models.OneToOneField(User, on_delete=models.CASCADE)
