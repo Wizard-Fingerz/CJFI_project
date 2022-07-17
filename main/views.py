@@ -1,6 +1,5 @@
 from django.shortcuts import render
-from .models import Course
-from .filters import CourseFilter
+
 # Create your views here.
 
 def home(request):
@@ -9,6 +8,4 @@ def home(request):
 
 
 def search(request):
-    course_list = Course.objects.all()
-    course_filter = CourseFilter(request.GET, queryset=course_list)
-    return render(request, 'search_results.html', {'filter': course_filter})
+    return render(request, 'search_results.html',)

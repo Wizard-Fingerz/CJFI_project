@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models import Course
+from .models import Book
 
 # Register your models here.
 
-class CourseAdmin(admin.ModelAdmin):
-    list_display = ("title", "keyword",)
-admin.site.register(Course, CourseAdmin)
+class BookAdmin(admin.ModelAdmin):
+    list_display = ("title", "author","publisher", "pdf")
+admin.site.register(Book, BookAdmin)
