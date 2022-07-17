@@ -43,6 +43,10 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'main',
+    'bootstrap-modal-forms',
+    'widget_tweaks',
+    'bootstrap3',
+    'django_forms_bootsrap',
 ]
 CKEDITOR_UPLOAD_PATH = "uploads/"
 
@@ -158,6 +162,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static")
+)
+
+
+AUTH_USER_MODEL = 'main.User'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
