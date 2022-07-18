@@ -38,15 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog',
     'crispy_forms',
     'ckeditor',
     'ckeditor_uploader',
     'main',
-    'bootstrap-modal-forms',
+    'bootstrap_modal_forms',
     'widget_tweaks',
     'bootstrap3',
-    'django_forms_bootsrap',
+    'django_forms_bootstrap',
 ]
 CKEDITOR_UPLOAD_PATH = "uploads/"
 
@@ -164,11 +163,11 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, "static")
+    os.path.join(BASE_DIR, "static"),
 )
 
-
 AUTH_USER_MODEL = 'main.User'
+
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'

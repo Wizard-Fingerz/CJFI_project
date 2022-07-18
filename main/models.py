@@ -1,5 +1,7 @@
 from django.db import models
-import django_filters
+from django.contrib.auth.models import AbstractUser, User
+from django.contrib.auth import get_user_model
+from django.urls import reverse
 
 # Create your models here.
 LEVEL_CHOICES = [
@@ -10,6 +12,13 @@ LEVEL_CHOICES = [
         ("DISTANT LEARNING", "DISTANT LEARNING"),
         ("SHORT COURSES AND CPD", "SHORT COURSE AND CPD"),
     ]
+class User(AbstractUser):
+    is_admin = models.BooleanField(default=False)
+    is_publisher = models.BooleanField(default=False)
+    is_librarian = models.BooleanField(default=False)
+
+    class Meta:
+        swappable = 'AUTH_USER_MODEL'
 class Book(models.Model):
     title = models.CharField(max_length=100)
     author = models.CharField(max_length=100)

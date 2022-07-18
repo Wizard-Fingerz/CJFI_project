@@ -16,161 +16,225 @@
     {%else%}
         <title>Charles Jekins Foundation International</title>
     {%endif%}
+    {% block stylesheets %}
+      <!-- Bootstrap CSS -->
+   
+      <!-- Custom CSS -->
+      <style media="screen">
+        .invalid {
+          color: #dc3545;
+          font-size: 80%;
+        }
+        body {
+          display: flex;
+          flex-direction: column;
+          min-height: 100vh;
+        }
+        .footer {
+          margin: auto 0 0;
+          height: 56px;
+        }
+      </style>
+    {% endblock stylesheets %}
+
+    {% load static %}
+    <!-- Custom fonts for this template-->
+    <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
+       <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+      <!-- Font awesome CSS -->
+      <link rel="stylesheet" href="{% static 'assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+
+    <!-- Page level plugin CSS-->
+    <link href="{% static 'vendor/datatables/dataTables.bootstrap4.css' %}" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/master.css' %}">
+    <link href="{% static 'css/sb-admin.css' %}" rel="stylesheet">
+    {% block stylesheet %}{% endblock %}
 </head>
 <body>
     {% comment %} navigation bar {% endcomment %}
-    <header class="site-header">
-        <nav class="navbar navbar-expand-lg" style="justify-content:space-between;">
-            <a class="navbar-brand" href="#" style="margin-right:50px;">
-                <img src="{% static 'img/cj.png' %}" alt="">
-            </a>
-            <div class="container-fluid">
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarNavDropdown" style="color:white; padding:10px;">
-                <ul class="navbar-nav">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">HOME</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      ABOUT US
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      DATA ANALYTICS
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <table>
-                        <tr>
-                          <td><div class="dropdown-header">INTRODUCTION</div></td>
-                          <td><div class="dropdown-header">COURSES</div></td>
-                          <td><div class="dropdown-header">SOFT SKILLS</div></td>
-                        </tr>
-                        <tr>
-                          <td><a class="dropdown-item" href="#">What is data analytics?</a></td>
-                          <td style="display:flex;"><a class="dropdown-item" href="#">Data Visualization</a><a class="dropdown-item" href="">Data Extraction</a></td>
-                          <td><a class="dropdown-item" href="#">Critical Thinking and Creativity</a></td>
-                        </tr>
-                        <tr>
-                          <td><a class="dropdown-item" href="#">What is data analysis used for?</a></td>
-                          <td style="display:flex;"><a class="dropdown-item" href="#">Data Cleaning</a><a class="dropdown-item" href="">Data Wrangling</a></td>
-                          <td><a class="dropdown-item" href="#">Communication and tools</a></td>
-                        </tr>
-                        <tr>
-                          <td><a class="dropdown-item" href="#">What is the typical data analysis process?</a></td>
-                          <td style="display:flex;"><a class="dropdown-item" href="#">MATLAB</a><a class="dropdown-item" href="">R</a></td>
-                          <td><a class="dropdown-item" href="#">Collaboration</a></td>
-                        </tr>
-                        <tr>
-                          <td><a class="dropdown-item" href="#">What does a data analyst do?</a></td>
-                          <td style="display:flex;"><a class="dropdown-item" href="#">Microsoft Excel</a><a class="dropdown-item" href="">Power Pivot Table</a></td>
-                          <td><a class="dropdown-item" href="#">Problem Solving</a></td>
-                        </tr>
-                        <tr>
-                          <td><a class="dropdown-item" href="#">What does a data analyst do?</a></td>
-                          <td style="display:flex;"><a class="dropdown-item" href="#">Python Statistical <br> Programming</a><a class="dropdown-item" href="">Anaconda</a></td>
-                          <td><a class="dropdown-item" href="#">Presentation</a></td>
-                        </tr>
-                        <tr>
-                          <td><a class="dropdown-item" href="#">What can you become a data analyst?</a></td>
-                          <td style="display:flex;"><a class="dropdown-item" href="#">Jupyter</a><a class="dropdown-item" href="">SASS</a></td>
-                          <td><a class="dropdown-item" href="#">Git</a></td>
-                        </tr>
-                        <tr>
-                          <td class="nav-item dropdown">
-                            <a class="dropdown-item" href="#">Libraries</a>
-                            <ul class="dropdown-menu dropdown-submenu">
-                              <li><a class="dropdown-item" href="#">Submenu item 1</a></li>
-                            </div>
-                          </td>
-                          <td></td>
-                        </tr>
-                        <tr>
-                          
-                        </tr>
-                        <tr><td class="dropdown-header">Others</td></tr>
-                        <tr>
-                          <td><a class="dropdown-item" href="#">Exercises</a></td>
-                          <td><a class="dropdown-item" href="#">Quizzes</a></td>
-                          <td><a class="dropdown-item" href="#">Analytics Game</a></td>
-                          <tr><td><a class="dropdown-item" href="#">Get Started</a></td><tr>
-                        </tr>
-                        
-                    </table>
-                    </div>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      RESEARCH
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <table>
-                        <tr>
-                          <td><a class="dropdown-item" href="#">New Entry</a></td>
-                          <td><a class="dropdown-item" href="#">Login</a></td>
-                          <td><a class="dropdown-item" href="#">Topics</a></td>
-                        </tr>
-                        <tr>
-                          <td><a class="dropdown-item" href="#">Request Project</a></td>
-                          <td><a class="dropdown-item" href="#">Manuscript Review</a></td>
-                          <td><a class="dropdown-item" href="#">Presentation Tips</a></td>
-                        </tr>
-                        <tr>
-                          <td><a class="dropdown-item" href="#">Submit Homework</a></td>
-                          <td><a class="dropdown-item" href="#">Documentation</a></td>
-                          <td><a class="dropdown-item" href="#">Grants</a></td>
-                        </tr>
-                        <tr>
-                          <td><a class="dropdown-item" href="#">Donate</a></td>
-                          <td><a class="dropdown-item" href="#">Terms and Conditions</a></td>
-                          <td></td>
-                        </tr>
-                      </table>
-                    </div>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      CONTRIBUTORS
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <table>
-                        <tr>
-                          <td><a class="dropdown-header" href="#">Major Contributors</a></td>
-                          <td><a class="dropdown-header" href="#">All Contributors</a></td>
-                          <td><a class="dropdown-header" href="#">Topics</a></td>
-                        </tr>
-                        <tr>
-                          <td><a class="dropdown-item" href="#">Request Project</a></td>
-                          <td><a class="dropdown-item" href="#">Manuscript Review</a></td>
-                          <td><a class="dropdown-item" href="#">Presentation Tips</a></td>
-                        </tr>
-                        <tr>
-                          <td><a class="dropdown-item" href="#">Submit Homework</a></td>
-                          <td><a class="dropdown-item" href="#">Documentation</a></td>
-                          <td><a class="dropdown-item" href="#">Grants</a></td>
-                        </tr>
-                        <tr>
-                          <td><a class="dropdown-item" href="#">Donate</a></td>
-                          <td><a class="dropdown-item" href="#">Terms and Conditions</a></td>
-                          <td></td>
-                        </tr>
-                      </table>
-                    </div>
-                  </li>                 
-                </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">
+          <img src="{% static 'img/cj.png' %}" alt="">
+      </a>
+      <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#">
+          <i class="fas fa-bars"></i>
+      </button>
+  
+      <!-- Navbar Search -->
+      <div class="collapse navbar-collapse" id="navbarNavDropdown" style="color:white; padding:10px;">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">HOME</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                ABOUT US
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
               </div>
-            </div>
-          </nav>
-    </header>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                DATA ANALYTICS
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <table>
+                  <tr>
+                    <td><div class="dropdown-header">INTRODUCTION</div></td>
+                    <td><div class="dropdown-header">COURSES</div></td>
+                    <td><div class="dropdown-header">SOFT SKILLS</div></td>
+                  </tr>
+                  <tr>
+                    <td><a class="dropdown-item" href="#">What is data analytics?</a></td>
+                    <td style="display:flex;"><a class="dropdown-item" href="#">Data Visualization</a><a class="dropdown-item" href="">Data Extraction</a></td>
+                    <td><a class="dropdown-item" href="#">Critical Thinking and Creativity</a></td>
+                  </tr>
+                  <tr>
+                    <td><a class="dropdown-item" href="#">What is data analysis used for?</a></td>
+                    <td style="display:flex;"><a class="dropdown-item" href="#">Data Cleaning</a><a class="dropdown-item" href="">Data Wrangling</a></td>
+                    <td><a class="dropdown-item" href="#">Communication and tools</a></td>
+                  </tr>
+                  <tr>
+                    <td><a class="dropdown-item" href="#">What is the typical data analysis process?</a></td>
+                    <td style="display:flex;"><a class="dropdown-item" href="#">MATLAB</a><a class="dropdown-item" href="">R</a></td>
+                    <td><a class="dropdown-item" href="#">Collaboration</a></td>
+                  </tr>
+                  <tr>
+                    <td><a class="dropdown-item" href="#">What does a data analyst do?</a></td>
+                    <td style="display:flex;"><a class="dropdown-item" href="#">Microsoft Excel</a><a class="dropdown-item" href="">Power Pivot Table</a></td>
+                    <td><a class="dropdown-item" href="#">Problem Solving</a></td>
+                  </tr>
+                  <tr>
+                    <td><a class="dropdown-item" href="#">What does a data analyst do?</a></td>
+                    <td style="display:flex;"><a class="dropdown-item" href="#">Python Statistical <br> Programming</a><a class="dropdown-item" href="">Anaconda</a></td>
+                    <td><a class="dropdown-item" href="#">Presentation</a></td>
+                  </tr>
+                  <tr>
+                    <td><a class="dropdown-item" href="#">What can you become a data analyst?</a></td>
+                    <td style="display:flex;"><a class="dropdown-item" href="#">Jupyter</a><a class="dropdown-item" href="">SASS</a></td>
+                    <td><a class="dropdown-item" href="#">Git</a></td>
+                  </tr>
+                  <tr>
+                    <td class="nav-item dropdown">
+                      <a class="dropdown-item" href="#">Libraries</a>
+                      <ul class="dropdown-menu dropdown-submenu">
+                        <li><a class="dropdown-item" href="#">Submenu item 1</a></li>
+                      </div>
+                    </td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    
+                  </tr>
+                  <tr><td class="dropdown-header">Others</td></tr>
+                  <tr>
+                    <td><a class="dropdown-item" href="#">Exercises</a></td>
+                    <td><a class="dropdown-item" href="#">Quizzes</a></td>
+                    <td><a class="dropdown-item" href="#">Analytics Game</a></td>
+                    <tr><td><a class="dropdown-item" href="#">Get Started</a></td><tr>
+                  </tr>
+                  
+              </table>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                RESEARCH
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <table>
+                  <tr>
+                    <td><a class="dropdown-item" href="#">New Entry</a></td>
+                    <td><a class="dropdown-item" href="{% url 'home'%}">Login</a></td>
+                    <td><a class="dropdown-item" href="#">Topics</a></td>
+                  </tr>
+                  <tr>
+                    <td><a class="dropdown-item" href="#">Request Project</a></td>
+                    <td><a class="dropdown-item" href="#">Manuscript Review</a></td>
+                    <td><a class="dropdown-item" href="#">Presentation Tips</a></td>
+                  </tr>
+                  <tr>
+                    <td><a class="dropdown-item" href="#">Submit Homework</a></td>
+                    <td><a class="dropdown-item" href="#">Documentation</a></td>
+                    <td><a class="dropdown-item" href="#">Grants</a></td>
+                  </tr>
+                  <tr>
+                    <td><a class="dropdown-item" href="#">Donate</a></td>
+                    <td><a class="dropdown-item" href="#">Terms and Conditions</a></td>
+                    <td></td>
+                  </tr>
+                </table>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                CONTRIBUTORS
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <table>
+                  <tr>
+                    <td><a class="dropdown-header" href="#">Major Contributors</a></td>
+                    <td><a class="dropdown-header" href="#">All Contributors</a></td>
+                    <td><a class="dropdown-header" href="#">Topics</a></td>
+                  </tr>
+                  <tr>
+                    <td><a class="dropdown-item" href="#">Request Project</a></td>
+                    <td><a class="dropdown-item" href="#">Manuscript Review</a></td>
+                    <td><a class="dropdown-item" href="#">Presentation Tips</a></td>
+                  </tr>
+                  <tr>
+                    <td><a class="dropdown-item" href="#">Submit Homework</a></td>
+                    <td><a class="dropdown-item" href="#">Documentation</a></td>
+                    <td><a class="dropdown-item" href="#">Grants</a></td>
+                  </tr>
+                  <tr>
+                    <td><a class="dropdown-item" href="#">Donate</a></td>
+                    <td><a class="dropdown-item" href="#">Terms and Conditions</a></td>
+                    <td></td>
+                  </tr>
+                </table>
+              </div>
+            </li>                 
+          </ul>
+          <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0" action="">
+              <div class="input-group">
+                  <input type="text" class="form-control" name="query" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                  <div class="input-group-append">
+                      <button class="btn btn-primary" type="submit">
+                          <i class="fas fa-search"></i>
+                      </button>
+                  </div>
+              </div>
+          </form>
+        </div>
+        
+  
+      <!-- Navbar -->
+      <ul class="navbar-nav ml-auto ml-md-0">
+          <li class="nav-item dropdown no-arrow">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-user-circle fa-fw text-primary"></i>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                  <a class="dropdown-item">{{ user.username }}</a>
+                  <div class="dropdown-divider"></div>
+                  
+                    {% if user.authenticate %}
+                      <a class="dropdown-item" href="{% url 'logout' %}" data-toggle="modal" data-target="#logoutModal">Logout</a>
+                    {% else %}
+                      <a class="dropdown-item" href="{% url 'login' %}" data-toggle="modal" data-target="#logoutModal">Login</a>
+                    {% endif %}
+              </div>
+          </li>
+      </ul>
+  
+  </nav>
       {% comment %} end of navbar {% endcomment %}
     {%block content %}
 
@@ -179,10 +243,17 @@
     
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
     <script src="{% static 'js/script.js' %}"></script>
+     <!-- JavaScript -->
+     {% block scripts %}
+     <script src="{% static 'assets/js/jquery-3.2.1.min.js' %}"></script>
+     <script src="{% static 'assets/js/popper.min.js' %}"></script>
+     <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+     <!-- You can alternatively load the minified version -->
+     <script src="{% static 'js/jquery.bootstrap.modal.forms.js' %}"></script>
+   {% endblock scripts %}
+
+   {% block extrascripts %}{% endblock extrascripts %}
 </body>
 </html>
