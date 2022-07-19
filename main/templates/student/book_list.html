@@ -19,15 +19,15 @@
                     Recent Added Books
                 </div>
                 <div class="card-body">
-                   <ol class="breadcrumb">
+                  <ol class="breadcrumb">
                 <li class="breadcrumb-item">
                     <a href="#"></a>
 
-                    <a  class="btn btn-sm btn-success" href="{% url 'uabook_form' %}" style="padding: 8px; float: right; background-color: green; color: white;">Add Book</a>
+                    <a  class="btn btn-sm btn-success" href="{% url 'uabook_form' %}" style="padding: 8px; float: right; background-color: green; color: white;">Make Book Request</a>
                 </li>
             </ol>
 
-             {% for message in messages %}
+            {% for message in messages %}
                         <div class="alert alert-{{ message.tags }} alert-dismissible" role="alert">
                             {{ message }}
                         </div>
@@ -39,8 +39,8 @@
 <!-- Table --->
 
 
-                     
-                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    
+                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                             <tr>
                                 <th>Book ID</th>
@@ -53,20 +53,20 @@
                             <tbody>
 
 
-                           <!-- if and for -->
-                           {% if books %}
-                           {% for book in books %}
+                          <!-- if and for -->
+                          {% if books %}
+                          {% for book in books %}
 
                         
                                 <tr>
                                   <td>{{ book.id }}</td>
                                   <td>
                                     {% if book.cover %}
-                                    <img src="" alt="{{ book.title}}" style="height: 100px; width: 100px">
+                                    <img src="{{ book.cover.url }}" alt="{{ book.title}}" style="height: 100px; width: 100px">
                                     {% else %}
                                     <span class="text-muted">No Cover</span>
                                     {% endif %}
-                                   </td>
+                                  </td>
                                   <td>{{ book.title }}</td>
                                     <td>
                                         {% if book.pdf %}
@@ -90,7 +90,7 @@
 
                                 <!-- end for and if -->
                                 {% endfor %}
-                               {% endif %} 
+                              {% endif %} 
                             </tbody>
                         </table>
 

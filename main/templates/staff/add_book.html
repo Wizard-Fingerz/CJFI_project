@@ -21,7 +21,7 @@
                     Fill In Information Of Books
                 </div>
                 <div class="card-body">
-            <form action="" method="POST" enctype="multipart/form-data">
+            <form action="{%url 'uabook' %}" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
         <div class="form-group">
                 <div class="col"><input type="text" class="form-control" name="title" placeholder="Book Title" required="required"></div>

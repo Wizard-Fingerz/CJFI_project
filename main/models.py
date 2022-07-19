@@ -36,5 +36,16 @@ class Book(models.Model):
     def delete(self, *args, **kwargs):
         self.pdf.delete()
     
+class Chat(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    message = models.TextField()
+    posted_at = models.DateTimeField(auto_now=True, null=True)
 
+    def __str__(self):
+        return str(self.message)
 
+class Feedback(models.Model):
+    feedback = models.CharField(max_length=100, null=True, blank=True)
+    
+    def __str__(self):
+        return self.feedback
